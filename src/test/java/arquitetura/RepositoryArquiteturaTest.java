@@ -12,11 +12,11 @@ class RepositoryArquiteturaTest {
     @ArchTest
     static final ArchRule classThatResideInRepositoryPackageShouldBeRepositoryNamePart =
             ArchRuleDefinition.classes()
-                    .should().haveSimpleNameEndingWith("Repository");
+                    .should().haveSimpleNameEndingWith("Repository").as("Classes do pacote repository devem terminar com Repository");
 
     @ArchTest
     static final ArchRule classThatResideInRepositoryPackageShouldBeRepositoryAnnotation =
             ArchRuleDefinition.classes()
-                    .should().beAnnotatedWith(org.springframework.stereotype.Repository.class);
+                    .should().beAnnotatedWith(org.springframework.stereotype.Repository.class).as("Classes do pacote repository devem estar anotadas com @Repository");
 
 }

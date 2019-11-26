@@ -12,11 +12,11 @@ class ControllerArquiteturaTest {
     @ArchTest
     static final ArchRule classThatResideInControllerPackageShouldBeHaveControllerSufix =
             ArchRuleDefinition.classes()
-                    .should().haveSimpleNameEndingWith("Controller");
+                    .should().haveSimpleNameEndingWith("Controller").as("Classes do pacote controller devem terminar com Controller. Ex.: classeController");
 
     @ArchTest
     static final ArchRule classThatResideInControllerPackageShouldBeControllerAnnotation =
             ArchRuleDefinition.classes()
-                    .should().beAnnotatedWith(org.springframework.stereotype.Controller.class);
+                    .should().beAnnotatedWith(org.springframework.stereotype.Controller.class).as("Classes do pacote controller devem ser anotadas com @Controller");
 
 }
